@@ -12,7 +12,7 @@
 	<artifactId>rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rest</name>
-	<description>LEO e-ecommerce REST server</description>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
