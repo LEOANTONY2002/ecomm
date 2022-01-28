@@ -1,0 +1,110 @@
+GET http://localhost:5001/api/v1/product/all  HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:5001/api/v1/user/signup
+Content-Type: application/json
+
+{
+    "name": "LEO",
+    "email": "leo",
+    "password": "leo"
+}
+
+###
+
+POST http://localhost:5001/api/v1/product HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "LEO",
+    "email": "leo2",
+    "name": "iPhone",
+    "desc": "iPhone red 12 pro",
+    "category": "tech",
+    "price": 72000,
+    "stock": 7,
+    "image": "https://firebasestorage.googleapis.com/v0/b/fir-a30d8.appspot.com/o/posts%2Fleoantony20025%40gmail.com%2F1621169913691iPhone%2B12%2B(PRODUCT)RED?alt=media&token=078df8c3-84c3-487d-b714-48c63cabd740"
+}
+
+###
+
+DELETE http://localhost:5001/api/v1/product/61e819675cb7980951a88e93  HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:5001/api/v1/location/all  HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "leo"
+}
+
+
+###
+
+POST http://localhost:5001/api/v1/location HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "LEO",
+    "email": "leo",
+    "address": "iPhone",
+    "city": "iPhone red 12 pro",
+    "state": "tech",
+    "country": 72000,
+    "pin": 7,
+    "phone": 979197
+}
+
+###
+
+PUT http://localhost:5001/api/v1/location HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "61ef97f8a1e3744e08e93f45",
+    "username": "LEO",
+    "email": "leo",
+    "address": "addres",
+    "city": "iPhone red 12 pro",
+    "state": "tech",
+    "country": 72000,
+    "pin": 7,
+    "phone": 979197
+}
+
+###
+
+DELETE http://localhost:5001/api/v1/order HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "leo"
+}
+
+
+###
+
+GET http://localhost:5001/api/v1/order/all  HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:5001/api/v1/order/createPayment HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "LEO",
+    "email": "leo",
+    "location": "iPhone",
+    "products": [],
+    "price": "500",
+    "order_id": "",
+    "payment_id": "",
+    "phone": 979197
+}

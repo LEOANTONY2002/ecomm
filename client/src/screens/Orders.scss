@@ -1,0 +1,132 @@
+@import "./Cart.scss";
+
+.main {
+  .order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 10;
+    .o-body {
+      min-width: 280px;
+      width: max-content;
+      max-width: 70vw;
+      margin-bottom: 10px;
+      margin: 30px;
+      .o-date {
+        position: absolute;
+        top: -30px;
+        left: 40px;
+        overflow: visible;
+        z-index: 10;
+        span {
+          width: max-content;
+          margin: 0;
+          padding: 7px 13px;
+          border-radius: 20px;
+          background: linear-gradient(120deg, var(--bc3), var(--bc));
+          color: var(--tc);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: x-small;
+          font-weight: bold;
+          box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.01);
+        }
+      }
+      .c-body {
+        margin-bottom: -20px;
+        .product {
+          margin-right: -50px;
+          .p-cont {
+            .pc-price {
+              span {
+              }
+              div {
+              }
+            }
+          }
+        }
+      }
+    }
+    .o-status {
+      display: flex;
+      align-items: center;
+      color: rgba(128, 128, 128, 0.39);
+      img {
+        border-radius: 50%;
+        width: 30px;
+        padding: 10px;
+        margin: 10px;
+        background: linear-gradient(120deg, var(--bc3), var(--bc));
+        box-shadow: 0 3px 10px #5555552f;
+        cursor: pointer;
+      }
+    }
+    .o-body {
+      min-width: 280px;
+      width: max-content;
+      max-width: 70vw;
+      padding: 0;
+      margin-bottom: 10px;
+      .o-date {
+        position: absolute;
+        top: -30px;
+        left: 40px;
+        overflow: visible;
+        z-index: 100;
+        p {
+          width: max-content;
+          margin: 0;
+          padding: 5px 10px;
+          background: linear-gradient(120deg, var(--col1), var(--col2));
+          color: var(--bc);
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-weight: 900;
+          font-size: small;
+          border-radius: 20px;
+          box-shadow: 0 -3px 10px rgba(104, 103, 103, 0.315);
+        }
+      }
+      .c-loc {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        color: #81808065;
+        font-size: smaller;
+        img {
+          width: 30px;
+          opacity: 0.4;
+        }
+      }
+      .c-body {
+        margin-bottom: -20px;
+        .product {
+          margin-right: -50px;
+          .p-cont {
+            .pc-price {
+              span {
+              }
+              div {
+              }
+            }
+          }
+        }
+      }
+    }
+    .o-status {
+      display: flex;
+      align-items: center;
+      color: rgba(128, 128, 128, 0.39);
+      img {
+        border-radius: 50%;
+        width: 30px;
+        padding: 10px;
+        margin: 10px;
+        background: linear-gradient(120deg, var(--bc3), var(--bc));
+        box-shadow: 0 3px 10px rgba(85, 85, 85, 0.185);
+        cursor: pointer;
+      }
+    }
+  }
+}

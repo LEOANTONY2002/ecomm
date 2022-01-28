@@ -1,0 +1,175 @@
+@import "../../variables.scss";
+
+.header {
+  position: absolute;
+  width: 100vw;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    color: var(--tc);
+    display: flex;
+    align-items: center;
+    font-family: "Sofia";
+    font-size: large;
+
+    img {
+      margin: 10px;
+      width: 27px;
+      border-radius: 50%;
+      padding: 4px;
+    }
+  }
+
+  .cont {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+
+    p {
+      margin: 5px 10px;
+      font-size: 11px !important;
+      font-weight: 900;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: var(--tc);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    a:hover {
+      color: var(--col2);
+    }
+  }
+
+  .h-cart {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    p {
+      font-size: 10px;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 50%;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      display: grid;
+      place-content: center;
+      top: -15px;
+      right: -10px;
+      background: linear-gradient(120deg, var(--col1), var(--col2));
+      color: var(--bc);
+    }
+  }
+
+  .m-ic {
+    display: none;
+
+    #menuicon {
+      width: 20px !important;
+      padding: 10px !important;
+      cursor: pointer;
+      z-index: 100;
+    }
+  }
+  .m-ic:hover + .menu,
+  .menu:hover {
+    transform: translateY(0);
+  }
+
+  .menu {
+    position: absolute;
+    right: 7px;
+    top: 80px;
+    transform: translateY(-200%);
+    transition: all 0.2s ease-in-out;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+
+    .m-field {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      margin: 5px;
+
+      div {
+        z-index: 100;
+        padding: 5px;
+        border-radius: 50%;
+        @include grad($black, black);
+      }
+
+      a {
+        cursor: pointer;
+        z-index: 120;
+        @include grad($black, black);
+        padding: 7px;
+        border-radius: 20px;
+        box-shadow: 0 3px 10px rgba(10, 10, 10, 0.39);
+
+        img {
+          width: 28px;
+          border-radius: 50%;
+          margin: 0;
+        }
+      }
+      span {
+        margin: 0 15px;
+        padding: 7px 10px;
+        z-index: 100;
+        transition: all 0.2s ease-in-out;
+        border-radius: 10px;
+        @include grad($black, black);
+        border-radius: 30px;
+        transform: translateX(150%);
+        opacity: 0;
+      }
+    }
+    .m-field a:hover ~ span {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    overflow: visible;
+    #carticon {
+      display: none;
+    }
+
+    .cont {
+      display: none;
+    }
+
+    .m-ic {
+      display: inherit;
+    }
+
+    #menuicon {
+      width: 30px;
+    }
+  }
+}

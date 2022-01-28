@@ -1,0 +1,204 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for Failed to commit area from 0x0000000082000000 to 0x0000000089e00000 of length 132120576.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3315), pid=17668, tid=5056
+#
+# JRE version:  (14.0.2+12) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\lib\idea_rt.jar=30333:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\bin -Dfile.encoding=UTF-8 com.leo.rest.RestApplication
+
+Host: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1202)
+Time: Wed Jan 12 15:19:13 2022 India Standard Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d13fe2e000):  JavaThread "Unknown thread" [_thread_in_vm, id=5056, stack(0x0000003e5c700000,0x0000003e5c800000)]
+
+Stack: [0x0000003e5c700000,0x0000003e5c800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5f8a9a]
+V  [jvm.dll+0x74247a]
+V  [jvm.dll+0x743c2f]
+V  [jvm.dll+0x744273]
+V  [jvm.dll+0x20d288]
+V  [jvm.dll+0x5f5dea]
+V  [jvm.dll+0x5eac45]
+V  [jvm.dll+0x2c7e9c]
+V  [jvm.dll+0x2c7cd2]
+V  [jvm.dll+0x2cdbbc]
+V  [jvm.dll+0x313fe8]
+V  [jvm.dll+0x313710]
+V  [jvm.dll+0x2a092a]
+V  [jvm.dll+0x2a1a79]
+V  [jvm.dll+0x71fd48]
+V  [jvm.dll+0x321c14]
+V  [jvm.dll+0x70112c]
+V  [jvm.dll+0x392def]
+V  [jvm.dll+0x394e61]
+C  [jli.dll+0x524b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffca89e3038, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001d13fe6b800 GCTaskThread "GC Thread#0" [stack: 0x0000003e5c800000,0x0000003e5c900000] [id=4052]
+  0x000001d13fe7d000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000003e5c900000,0x0000003e5ca00000] [id=9984]
+  0x000001d13fe7e800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000003e5ca00000,0x0000003e5cb00000] [id=16656]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffca8211257]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001d13fe27ce0] Heap_lock - owner thread: 0x000001d13fe2e000
+
+Heap address: 0x0000000082000000, size: 2016 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.556 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+Event: 0.559 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff688f80000 - 0x00007ff688f8f000 	C:\Program Files\Java\jdk-14.0.2\bin\java.exe
+0x00007ffd1b3b0000 - 0x00007ffd1b5a5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd1af80000 - 0x00007ffd1b03e000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd18e50000 - 0x00007ffd19119000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd18d50000 - 0x00007ffd18e50000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd0ec40000 - 0x00007ffd0ec58000 	C:\Program Files\Java\jdk-14.0.2\bin\jli.dll
+0x00007ffd1b2c0000 - 0x00007ffd1b36c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd1aee0000 - 0x00007ffd1af7e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd1a220000 - 0x00007ffd1a2bb000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd1aa60000 - 0x00007ffd1ab8a000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd19ea0000 - 0x00007ffd1a041000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd18ad0000 - 0x00007ffd18af2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd1a1b0000 - 0x00007ffd1a1db000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd18c40000 - 0x00007ffd18d4b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd19120000 - 0x00007ffd191bd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd057e0000 - 0x00007ffd057f5000 	C:\Program Files\Java\jdk-14.0.2\bin\VCRUNTIME140.dll
+0x00007ffd12260000 - 0x00007ffd1226a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd054d0000 - 0x00007ffd0576a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffd1a1e0000 - 0x00007ffd1a210000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffcbe1d0000 - 0x00007ffcbe26b000 	C:\Program Files\Java\jdk-14.0.2\bin\msvcp140.dll
+0x00007ffca7f60000 - 0x00007ffca8a7e000 	C:\Program Files\Java\jdk-14.0.2\bin\server\jvm.dll
+0x00007ffd1a210000 - 0x00007ffd1a218000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffcf41d0000 - 0x00007ffcf41d9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd1b0a0000 - 0x00007ffd1b10b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd04730000 - 0x00007ffd04757000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd16a00000 - 0x00007ffd16a12000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd10bf0000 - 0x00007ffd10bfa000 	C:\Program Files\Java\jdk-14.0.2\bin\jimage.dll
+0x00007ffd166a0000 - 0x00007ffd16884000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd047e0000 - 0x00007ffd0480c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd18b60000 - 0x00007ffd18be3000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd036c0000 - 0x00007ffd036ce000 	C:\Program Files\Java\jdk-14.0.2\bin\instrument.dll
+0x00007ffcff7e0000 - 0x00007ffcff805000 	C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+0x00007ffd057c0000 - 0x00007ffd057d6000 	C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-14.0.2\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-14.0.2\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\lib\idea_rt.jar=30333:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\bin -Dfile.encoding=UTF-8 
+java_command: com.leo.rest.RestApplication
+java_class_path (initial): E:\WEB\SPRING\rest\rest\target\classes;C:\Users\LENOVO\.m2\repository\org\springframework\boot\spring-boot-starter-data-mongodb\2.6.2\spring-boot-starter-data-mongodb-2.6.2.jar;C:\Users\LENOVO\.m2\repository\org\springframework\boot\spring-boot-starter\2.6.2\spring-boot-starter-2.6.2.jar;C:\Users\LENOVO\.m2\repository\org\springframework\boot\spring-boot\2.6.2\spring-boot-2.6.2.jar;C:\Users\LENOVO\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.6.2\spring-boot-autoconfigure-2.6.2.jar;C:\Users\LENOVO\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.6.2\spring-boot-starter-logging-2.6.2.jar;C:\Users\LENOVO\.m2\repository\ch\qos\logback\logback-classic\1.2.9\logback-classic-1.2.9.jar;C:\Users\LENOVO\.m2\repository\ch\qos\logback\logback-core\1.2.9\logback-core-1.2.9.jar;C:\Users\LENOVO\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.17.0\log4j-to-slf4j-2.17.0.jar;C:\Users\LENOVO\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.0\log4j-api-2.17.0.jar;C:\Users\LENOVO\.m2\repository\org\slf4j\jul-to-slf4j\1.7.32\jul-to-slf4j-1.7.32.jar;C:\Users\LENOVO\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\LENOVO\.m2\repository\org\yaml\snakeyaml\1.29\snakeyaml-1.29.jar;C:\Users\LENOVO\.m2\repository\org\mongodb\mongodb-driver-sync\4.4.0\mongodb-driver-sync-4.4.0.jar;C:\Users\LENOVO\.m2\repository\org\mongodb\bson\4.4.0\bson-4.4.0.jar;C:\Users\LENOVO\.m2\repository\org\mongodb\mongodb-driver-core\4.4.0\mongodb-driver-core-4.4.0.jar;C:\Users\LENOVO\.m2\repository\org\springframework\data\spring-data-mongodb\3.3.0\spring-data-mongodb-3.3.0.jar;C:\Users\LENOVO\.m2\repository\org\springframework\spring-tx\5.3.14\spring-tx-5.3.14.jar;C:\Users\LENOVO\.m2\repository\org\springframework\spring-context\5.3.14\spring-context-5.3.14.jar;C:\Users\LENOVO\.m2\repository\org\springframework\spring-beans\5.3.14\spring-beans-5.3.14.jar;C:\Users\LENOVO\.m2\r
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2113929216                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2113929216                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
+PATH=C:\Users\LENOVO\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\LENOVO\AppData\Local\Programs\Python\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Enterprise Backup 8.0\\bin;C:\Program Files\Java\jdk-11.0.8\bin;C:\Program Files\Git\cmd;C:\Users\LENOVO\AppData\Local\Android\Sdk\platform-tools;C:\php;C:\php7;C:\xampp\php;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Users\LENOVO\AppData\Roaming\npm;C:\Users\LENOVO\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\nodejs\;C:\Users\LENOVO\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\LENOVO
+USERNAME=LENOVO
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1202)
+OS uptime: 0 days 5:42 hours
+HyperV virtualization detected
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 8058M (552M free)
+TotalPageFile size 8058M (AvailPageFile size 114M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 177M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46) for windows-amd64 JRE (14.0.2+12-46), built on Jul  9 2020 00:35:52 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.

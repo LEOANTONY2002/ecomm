@@ -1,0 +1,265 @@
+@import "./Home.scss";
+@import "../variables.scss";
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  .ship {
+    height: max-content;
+    padding: 30px;
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    background-color: var(--bc);
+    box-shadow: 0 4px 20px 0 rgba(85, 85, 85, 0.185);
+    z-index: 10;
+    position: relative;
+    overflow: visible;
+
+    img {
+      position: absolute;
+      background-color: var(--bc);
+      padding: 7px;
+      border-radius: 50%;
+      margin-top: -60px;
+    }
+
+    input {
+      width: 210px;
+      height: 35px;
+      margin: 15px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid var(--col2);
+      color: var(--col1);
+    }
+    input:focus {
+      outline: none;
+    }
+
+    @include button;
+  }
+
+  .checkout {
+    margin: 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .loc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      font-size: small;
+      font-weight: 600;
+      div {
+        width: max-content;
+        padding: 40px;
+        margin: 20px;
+        background-color: var(--bc);
+        color: var(--tc);
+        border-radius: 40px;
+        box-shadow: 0 3px 10px var(--bs);
+        padding-bottom: 100px;
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 40%;
+        position: relative;
+        p {
+          margin: 5px;
+        }
+        span {
+          position: absolute;
+          top: 90px;
+          left: -50px;
+          transform: rotate(90deg);
+          background: linear-gradient(120deg, var(--col1), var(--col2));
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          padding: 10px;
+          color: var(--bc);
+        }
+      }
+      img {
+        width: 35px;
+        padding: 10px;
+        background: linear-gradient(120deg, var(--col1), var(--col2));
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -50px;
+        z-index: 10;
+      }
+    }
+    .pay {
+      width: max-content;
+      margin: 20px;
+      background-color: var(--bc);
+      color: var(--tc);
+      border-radius: 40px;
+      box-shadow: 0 3px 10px var(--bs);
+      z-index: 10;
+      div {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        span {
+          font-size: x-small;
+          font-weight: 600;
+          color: rgba(128, 128, 128, 0.473);
+          padding-bottom: 3px;
+          border-bottom: 2px solid var(--col1);
+          margin-top: -15px;
+          width: 150px;
+          text-align: center;
+        }
+        img {
+          width: 35px;
+          padding: 10px;
+          background: linear-gradient(120deg, var(--col1), var(--col2));
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+      .p-left {
+        margin-right: 60px;
+      }
+      .p-right {
+        margin-left: 60px;
+      }
+    }
+  }
+  .cart {
+    width: 80vw;
+    min-height: 200px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: var(--bc);
+    box-shadow: 0 4px 20px 0 var(--bs);
+    position: relative;
+    overflow: visible;
+    margin: 0 20px;
+
+    .c-total {
+      transform: rotate(-90deg);
+      position: absolute;
+      bottom: 40px;
+      right: -2px;
+      width: 30px;
+      overflow: visible;
+      z-index: 100;
+      p {
+        width: max-content;
+        margin: 0;
+        padding: 5px 10px;
+        background: linear-gradient(120deg, var(--col1), var(--col2));
+        color: var(--bc);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 900;
+        font-size: small;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+
+    .c-body {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      overflow-x: scroll;
+
+      .product {
+        color: var(--tc);
+        flex: 0 0 auto;
+        background: none;
+        box-shadow: none;
+        overflow: visible;
+        margin: 20px 10px;
+        .p-cont {
+          .pc-price {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            color: var(--col2);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            span {
+              font-size: 40px;
+              font-weight: bold;
+              font-family: cursive;
+            }
+            div {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              background: linear-gradient(120deg, var(--bc3), var(--bc));
+              box-shadow: 0 3px 10px var(--bs);
+              position: absolute;
+              margin-top: 2px;
+              left: 2px;
+              display: grid;
+              place-content: center;
+              font-size: smaller;
+            }
+          }
+        }
+        .add {
+          bottom: 0;
+          right: 0;
+          padding: 10px;
+          box-shadow: 0 3px 10px var(--bs);
+          background: linear-gradient(120deg, var(--bc3), var(--bc));
+        }
+      }
+    }
+  }
+
+  .cart > span {
+    position: absolute;
+    font-family: fantasy;
+    top: -60px;
+    right: 2vw;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bolder;
+    color: rgba(70, 69, 69, 0.247);
+    p {
+      font-family: "Montserrat";
+      font-size: 11px;
+      margin-top: -10px;
+    }
+  }
+
+  .ptc {
+    color: rgba(148, 148, 148, 0.315);
+    display: flex;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    img {
+      border-radius: 50%;
+      width: 30px;
+      padding: 10px;
+      margin: 10px;
+      background: linear-gradient(120deg, var(--col1), var(--col2));
+      cursor: pointer;
+      z-index: 20;
+    }
+  }
+}

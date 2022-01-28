@@ -1,0 +1,34 @@
+.banner {
+  width: 100vw;
+  position: absolute;
+  top: 70px;
+  left: 0;
+}
+
+.grad {
+  width: 90vw;
+  margin: auto;
+  height: 350px;
+  background: linear-gradient(120deg, var(--col1), var(--col2));
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--bc3);
+}
+
+.g1 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(270deg, var(--col1), var(--col2));
+  border-radius: 50%;
+  margin-top: -80px;
+  border: 20px solid var(--col1);
+  box-shadow: inset 0 0px 15px rgba(171, 198, 248, 0.548);
+}
+
+.grad h2 {
+  position: absolute;
+  margin-top: 60px;
+  text-transform: capitalize;
+}
