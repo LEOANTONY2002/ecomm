@@ -24,7 +24,6 @@ function App() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
   const user = useSelector((state) => state.user);
-  const [usr, setUsr] = useState([]);
   const p = useSelector((state) => state.product.detail);
   const up = useSelector((state) => state.product.userProducts);
   const [cart, setCart] = useState([]);
@@ -92,10 +91,6 @@ function App() {
     dispatch(allProducts());
   };
 
-  useEffect(async () => {
-    let u = await JSON.parse(Cookies.get("ecom_user") || []);
-    if (u) setUsr(u);
-  }, []);
   console.log(user);
 
   useEffect(() => {
@@ -155,7 +150,7 @@ function App() {
           <Route
             path="/orders"
             element={
-              user !== [] || usr !== [] ? (
+              user !== [] ? (
                 <>
                   <Header cartlen={cart.length} name={"orders"} />
                   <Banner name={"orders"} />
@@ -173,7 +168,7 @@ function App() {
           <Route
             path="/cart"
             element={
-              user !== [] || usr !== [] ? (
+              user !== [] ? (
                 <>
                   <Header cartlen={cart.length} name={"cart"} />
                   <Banner name={"cart"} />
@@ -198,7 +193,7 @@ function App() {
           <Route
             path="/products"
             element={
-              user !== [] || usr !== [] ? (
+              user !== [] ? (
                 <>
                   <Header cartlen={cart.length} name={"products"} />
                   <Banner name={"products"} />

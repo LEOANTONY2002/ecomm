@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.scss";
 import userIcon from "./icons/user.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,25 +11,37 @@ function Login({ col1, col2 }) {
   const [password, setPassword] = useState("");
   const [log, setLog] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.state);
   const navigate = useNavigate();
 
   console.log(user);
 
+  useEffect(() => {
+    if (!user?.status) setErr(user?.error);
+    else {
+      setErr("");
+    }
+  }, [user]);
+
   const sign = async () => {
+    await setErr("");
     if (log) {
-      setLoading(true);
       console.log("logging in...");
       await dispatch(login(email, password));
-      if (user) {
-        setLoading(false);
+      if (!user?.status) {
+        setErr(user?.error);
+      } else {
+        setErr("");
         navigate("/");
       }
     } else {
       await dispatch(signup(name, email, password));
-      if (user) {
-        setLoading(false);
+      if (!user?.status) {
+        setErr(user?.error);
+      } else {
+        setErr("");
         navigate("/");
       }
     }
@@ -65,6 +77,7 @@ function Login({ col1, col2 }) {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          {err !== "" && <span>{err}</span>}
           <button onClick={sign}>{log ? "Login" : "Signup"}</button>
           <div className="or">
             <span></span>

@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateUser } from "../actions/userAction";
+import { login, updateUser } from "../actions/userAction";
 import { storage } from "../firebase";
 import "./Profile.scss";
 
@@ -41,11 +41,11 @@ function Profile({ col1, col2, us }) {
   const upload = async (e) => {
     const file = await e.target.files[0];
     const up = await storage
-      .ref(`/ecom/profile/${user.email}/${file.name}`)
+      .ref(`/ecom/profile/${user?.user?.email}/${file.name}`)
       .put(file)
       .then((snap) => {
         storage
-          .ref(`/ecom/profile/${user.email}/${file.name}`)
+          .ref(`/ecom/profile/${user?.user?.email}/${file.name}`)
           .getDownloadURL()
           .then((link) => {
             console.log(link);
@@ -79,12 +79,16 @@ function Profile({ col1, col2, us }) {
               <img
                 className="pi-user"
                 style={
-                  user?.image && { padding: 0, width: "120px", height: "120px" }
+                  user?.user?.image && {
+                    padding: 0,
+                    width: "120px",
+                    height: "120px",
+                  }
                 }
                 src={
-                  user?.image
-                    ? user.image
-                    : `https://img.icons8.com/fluency-systems-regular/${col1}/96/user.png`
+                  user?.user?.image
+                    ? user?.user?.image
+                    : `https://img.icons8.com/fluency-systems-regular/${col1}/96/user?.user?.png`
                 }
               />
             )}
@@ -97,9 +101,9 @@ function Profile({ col1, col2, us }) {
               onChange={(e) => setname(e.target.value)}
             />
           ) : (
-            <p>{user?.name}</p>
+            <p>{user?.user?.name}</p>
           )}
-          <span>{user?.email}</span>
+          <span>{user?.user?.email}</span>
           {!edit && (
             <div className="logout">
               <span>logout</span>
@@ -175,8 +179,8 @@ function Profile({ col1, col2, us }) {
           onClick={() => setProf(true)}
           src={
             prof
-              ? `https://img.icons8.com/fluency-systems-regular/${col2}/48/user.png`
-              : `https://img.icons8.com/fluency-systems-regular/${col1}/48/user.png`
+              ? `https://img.icons8.com/fluency-systems-regular/${col2}/48/user?.user?.png`
+              : `https://img.icons8.com/fluency-systems-regular/${col1}/48/user?.user?.png`
           }
         />
         <img

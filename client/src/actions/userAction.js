@@ -9,9 +9,11 @@ export const signup = (name, email, password) => async (dispatch) => {
       password,
     });
     await dispatch({ type: "SIGNUP", payload: data });
-    Cookies.set("ecom_user", JSON.stringify(data), { expires: 37 });
+    if (data.status) {
+      Cookies.set("ecom_user", JSON.stringify(data), { expires: 37 });
+    } else Cookies.set("ecom_user", JSON.stringify([]));
   } catch (error) {
-    dispatch({ type: "SIGNUP", payload: false });
+    dispatch({ type: "SIGNUP", payload: [] });
   }
 };
 
@@ -22,7 +24,9 @@ export const login = (email, password) => async (dispatch) => {
       password,
     });
     await dispatch({ type: "LOGIN", payload: data });
-    Cookies.set("ecom_user", JSON.stringify(data), { expires: 37 });
+    if (data.status) {
+      Cookies.set("ecom_user", JSON.stringify(data), { expires: 37 });
+    } else Cookies.set("ecom_user", JSON.stringify([]));
   } catch (error) {
     dispatch({ type: "LOGIN", payload: false });
   }
