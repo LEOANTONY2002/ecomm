@@ -1,4 +1,5 @@
-FROM openjdk:11-jdk-alpine
-EXPOSE 8080
-ADD target/rest-0.0.1-SNAPSHOT.jar rest.jar
-ENTRYPOINT ["java","-jar","/demo.jar"]
+FROM adoptopenjdk/openjdk11:alpine-jre
+WORKDIR /opt/app
+ARG JAR_FILE=target/rest.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
