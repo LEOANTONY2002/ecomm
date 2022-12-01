@@ -6,7 +6,7 @@ import "./Home.scss";
 import detailIcon from "./icons/detail.png";
 
 function Home() {
-  const products = useSelector((state) => state.product.allProducts) || [];
+  const products = useSelector((state) => state.product.allProducts) | [];
   const product = useSelector((state) => state.product.detail);
   const theme = useSelector((state) => state.theme);
   const [color, setColor] = useState("");
@@ -30,7 +30,7 @@ function Home() {
   return (
     <>
       <div className="main">
-        {products?.length != 0 ? (
+        {products?.length !== 0 ? (
           products?.map((p) => (
             <div key={p?._id} className="prod">
               <div className="p-cont">
